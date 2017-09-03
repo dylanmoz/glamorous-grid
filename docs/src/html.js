@@ -13,7 +13,7 @@ module.exports = class HTML extends React.Component {
           <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
           <link rel="stylesheet" href="/normalize.css" />
           <link rel="stylesheet" href="/skeleton.css" />
-          <link rel="stylesheet" href="/main.css" />
+          <link rel="stylesheet" href="/custom.css" />
           {this.props.headComponents}
         </head>
         <body>
