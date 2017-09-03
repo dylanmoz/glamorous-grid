@@ -4,10 +4,11 @@ module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 
 [include]
-./src/*.js
+src/*.js
 
 
 [ignore]
+.*/docs/.*
 .*/node_modules/eslint-plugin-jsx-a11y/.*
 .*/node_modules/graphql/.*
 .*/node_modules/graphql-skip-limit/.*

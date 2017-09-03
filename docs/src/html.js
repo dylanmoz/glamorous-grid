@@ -2,6 +2,8 @@
 
 import React from 'react'
 
+const prefix = process.env.NODE_ENV === 'production' ? '/glamorous-grid' : ''
+
 module.exports = class HTML extends React.Component {
   render() {
     return (
@@ -11,9 +13,9 @@ module.exports = class HTML extends React.Component {
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
           <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
-          <link rel="stylesheet" href="/normalize.css" />
-          <link rel="stylesheet" href="/skeleton.css" />
-          <link rel="stylesheet" href="/custom.css" />
+          <link rel="stylesheet" href={`${prefix}/normalize.css`} />
+          <link rel="stylesheet" href={`${prefix}/skeleton.css`} />
+          <link rel="stylesheet" href={`${prefix}/custom.css`} />
           {this.props.headComponents}
         </head>
         <body>
