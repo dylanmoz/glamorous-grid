@@ -7,7 +7,7 @@
     "build": "rimraf lib && babel src -d lib --ignore .spec.js",
     "docs:publish": "cd docs && gatsby build --prefix-paths && gh-pages -d public && cd ..",
     "test": "yarn lint && yarn flow && yarn jest",
-    "lint": "eslint src docs/src --ignore-pattern '**/*.test.js' --ext .js",
+    "lint": "eslint src --ignore-pattern '**/*.test.js' --ext .js",
     "flow": "flow check --show-all-errors",
     "jest": "jest",
     "jest:update": "jest -u"
