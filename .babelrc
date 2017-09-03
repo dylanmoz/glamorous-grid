@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "env",
+    "flow",
+    "react"
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-react-inline-elements",
+    "transform-react-constant-elements",
+    [
+      "module-resolver", {
+        "root": ["./src"]
+      }
+    ]
+  ]
+}

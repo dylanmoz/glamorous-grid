@@ -1,0 +1,73 @@
+{
+  "name": "glamorous-grid",
+  "version": "1.0.0",
+  "description": "Responsive React grid layout components built with glamorous",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && babel src -d lib --ignore .spec.js",
+    "test": "yarn lint && yarn flow && yarn jest",
+    "lint": "eslint src docs/src --ignore-pattern '**/*.test.js' --ext .js",
+    "flow": "flow check --show-all-errors",
+    "jest": "jest",
+    "jest:update": "jest -u"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanmoz/glamorous-grid.git"
+  },
+  "keywords": [
+    "react",
+    "glamorous",
+    "grid",
+    "layout",
+    "responsive",
+    "mobile"
+  ],
+  "author": "Dylan Mozlowski <dylan.mozlowski@gmail.com> (http://www.dylanmozlowski.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dylanmoz/glamorous-grid/issues"
+  },
+  "homepage": "https://github.com/dylanmoz/glamorous-grid#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-plugin-glamorous-displayname": "^2.1.0",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-inline-elements": "^6.22.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.6.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-flowtype": "^2.35.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "flow-bin": "^0.54.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.7.0",
+    "jest": "^20.0.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "rimraf": "^2.6.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.spec.js"
+    ],
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "roots": [
+      "src/"
+    ]
+  }
+}

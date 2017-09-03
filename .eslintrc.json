@@ -1,0 +1,34 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "consistent-return": 0,
+    "no-unused-vars": 1,
+    "comma-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "semi": [2, "never"],
+    "no-unexpected-multiline": 2,
+    "flowtype/require-valid-file-annotation": [2, "always"],
+    "no-use-before-define": [2, { "functions": false }],
+    "react/sort-comp": [2, {
+      "order": [
+        "type-annotations",
+        "static-methods",
+        "lifecycle",
+        "everything-else",
+        "render"
+      ]
+    }]
+  }
+}
