@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `glamorous-grid`,
   },
   plugins: [`gatsby-plugin-react-helmet`],
+  pathPrefix: '/glamorous-grid'
 }

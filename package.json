@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rimraf lib && babel src -d lib --ignore .spec.js",
+    "docs:publish": "cd docs && gatsby build --prefix-paths && gh-pages -d public && cd ..",
     "test": "yarn lint && yarn flow && yarn jest",
     "lint": "eslint src docs/src --ignore-pattern '**/*.test.js' --ext .js",
     "flow": "flow check --show-all-errors",
@@ -23,7 +24,7 @@
     "responsive",
     "mobile"
   ],
-  "author": "Dylan Mozlowski <dylan.mozlowski@gmail.com> (http://www.dylanmozlowski.com)",
+  "author": "Dylan Mozlowski <dylan.mozlowski@gmail.com> (http://dylanmoz.github.io)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dylanmoz/glamorous-grid/issues"
