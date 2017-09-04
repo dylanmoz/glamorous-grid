@@ -1,0 +1,17 @@
+[options]
+suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+
+[include]
+src/*.js
+
+
+[ignore]
+.*/docs/.*
+.*/node_modules/eslint-plugin-jsx-a11y/.*
+.*/node_modules/graphql/.*
+.*/node_modules/graphql-skip-limit/.*
+.*/node_modules/mitt/.*
+.*/node_modules/graphql-relay/.*
+.*/node_modules/express-graphql/.*

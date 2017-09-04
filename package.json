@@ -4,7 +4,7 @@
   "description": "Responsive React grid layout components built with glamorous",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rimraf lib && babel src -d lib --ignore .spec.js",
+    "build": "rimraf lib && babel src -d lib --ignore .spec.js && flow-copy-source -v src lib",
     "docs:publish": "cd docs && gatsby build --prefix-paths && gh-pages -d public && cd ..",
     "test": "yarn lint && yarn flow && yarn jest",
     "lint": "eslint src --ignore-pattern '**/*.test.js' --ext .js",
@@ -51,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
     "flow-bin": "^0.54.0",
+    "flow-copy-source": "^1.2.1",
     "glamor": "^2.20.40",
     "glamorous": "^4.7.0",
     "jest": "^20.0.4",
@@ -70,5 +71,8 @@
     "roots": [
       "src/"
     ]
+  },
+  "dependencies": {
+    "fbjs": "0.8.14"
   }
 }
