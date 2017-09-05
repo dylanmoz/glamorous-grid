@@ -5,7 +5,6 @@ import glamorous from 'glamorous'
 import { Motion, spring } from 'react-motion'
 import 'prismjs'
 import 'prismjs/components/prism-jsx'
-import 'prismjs/themes/prism.css'
 import { PrismCode } from 'react-prism'
 
 import { Container, Row, Col } from '../../../src'
@@ -231,9 +230,9 @@ function MyComponent(props) => {
               <Example>
                 <Container>
                   <Row justifyContent={{ md: 'center' }} mb={12}>
-                    <Col equalWidth span={{ lg: 2/12 }}>1 of 3</Col>
+                    <Col span={{ lg: 2/12 }}>1 of 3</Col>
                     <Col span={12/12} auto={{ md: true }}>Just some variable width content</Col>
-                    <Col equalWidth span={{ lg: 2/12 }}>3 of 3</Col>
+                    <Col span={{ lg: 2/12 }}>3 of 3</Col>
                   </Row>
                   <Row>
                     <Col>1 of 3</Col>
@@ -246,9 +245,9 @@ function MyComponent(props) => {
               <Code>
                 {`<Container>
   <Row justifyContent={{ md: 'center' }} mb={12}>
-    <Col equalWidth span={{ lg: 2/12 }}>1 of 3</Col>
+    <Col span={{ lg: 2/12 }}>1 of 3</Col>
     <Col span={12/12} auto={{ md: true }}>Just some variable width content</Col>
-    <Col equalWidth span={{ lg: 2/12 }}>3 of 3</Col>
+    <Col span={{ lg: 2/12 }}>3 of 3</Col>
   </Row>
   <Row>
     <Col>1 of 3</Col>
