@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "gatsby-cli": "^1.1.6",
+    "gatsby-plugin-google-analytics": "^1.0.7",
     "gh-pages": "^1.0.0",
     "prettier": "^1.6.1"
   }
