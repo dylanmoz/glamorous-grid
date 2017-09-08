@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/dylanmoz/glamorous-grid.svg?branch=master)](https://travis-ci.org/dylanmoz/glamorous-grid)
 
+Documentation: https://dylanmoz.github.io/glamorous-grid/
+
 ### Install
 
 ```
