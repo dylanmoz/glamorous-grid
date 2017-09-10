@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import glamorous from 'glamorous'
+import glamorous, { ThemeProvider } from 'glamorous'
 import { Motion, spring } from 'react-motion'
 import 'prismjs'
 import 'prismjs/components/prism-jsx'
@@ -19,6 +19,23 @@ const Card = glamorous.div({
   border: '1px solid #eee',
   borderRadius: 3,
   boxShadow: '0 2px 4px 0 rgba(25, 29, 34, 0.1)'
+})
+
+const AnchorLink = glamorous.a({
+  '&&': {
+    color: '#222',
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline'
+    }
+  }
+})
+
+const Anchor = glamorous.a({
+  display: 'block',
+  position: 'relative',
+  top: '-100px',
+  visibility: 'hidden'
 })
 
 const Example = glamorous.div({
@@ -94,7 +111,8 @@ const IndexPage = () => (
 
           <Col span={1} mb={24}>
             <CardAnimation>
-              <h5>Basic Usage</h5>
+              <Anchor id="basic" />
+              <AnchorLink href="#basic"><h5>Basic Usage</h5></AnchorLink>
               <PrismCode component="pre" className="language-bash">npm install glamorous-grid</PrismCode>
               <PrismCode component="pre" className="language-javascript">
                 {`import { Container, Row, Col } from 'glamorous-grid'
@@ -161,7 +179,8 @@ function MyComponent(props) => {
 
           <Col span={1} mb={24}>
             <CardAnimation>
-              <h5>Span and breakpoints</h5>
+              <Anchor id="span-breakpoints" />
+              <AnchorLink href="#span-breakpoints"><h5>Span and breakpoints</h5></AnchorLink>
               <p>
                 The default breakpoints
                 are <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>,
@@ -222,7 +241,8 @@ function MyComponent(props) => {
 
           <Col span={1} mb={24}>
             <CardAnimation>
-              <h5>Variable width content</h5>
+              <Anchor id="variable-width" />
+              <AnchorLink href="#variable-width"><h5>Variable width content</h5></AnchorLink>
 
               <p>Use the <code>auto</code> prop on <code>Col</code> for variable content width.</p>
 
@@ -261,7 +281,8 @@ function MyComponent(props) => {
 
           <Col span={1} mb={24}>
             <CardAnimation>
-              <h5>Vertical Alignment</h5>
+              <Anchor id="vertical" />
+              <AnchorLink href="#vertical"><h5>Vertical Alignment</h5></AnchorLink>
 
               <p>
                 The props <code>alignItems</code> (on Row) and <code>alignSelf</code> (on Col)
@@ -340,7 +361,8 @@ const RowSpaced = glamorous(Row)({
 
           <Col span={1} mb={24}>
             <CardAnimation>
-              <h5>Horizontal Alignment</h5>
+              <Anchor id="horizontal" />
+              <AnchorLink href="#horizontal"><h5>Horizontal Alignment</h5></AnchorLink>
 
               <p>
                 The <code>Row</code> prop <code>justifyContent</code> can be used to
@@ -396,6 +418,154 @@ const RowSpaced = glamorous(Row)({
     <Col span={4/12}>2 of 2 columns</Col>
   </Row>
 </Container>`}
+              </Code>
+            </CardAnimation>
+          </Col>
+
+          <Col span={1} mb={24}>
+            <CardAnimation>
+              <Anchor id="theme" />
+              <AnchorLink href="#theme"><h5>Customizing the grid</h5></AnchorLink>
+
+              <p>
+                The grid system is based off of following default theme:
+              </p>
+
+              <Code>
+                {`{
+  grid_breakpoints: {
+    xs: 0,
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xl: 1200
+  },
+  max_container_width: {
+    sm: 540,
+    md: 720,
+    lg: 960,
+    xl: 1140
+  },
+  column_gutter: {
+    xs: 24,
+    sm: 24,
+    md: 24,
+    lg: 24,
+    xl: 24
+  },
+  outer_gutter: {
+    xs: 24,
+    sm: 24,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }
+}`}
+              </Code>
+              <p>
+                You can override the default theme by using
+                glamorous' <a href="https://glamorous.rocks/advanced#theming">ThemeProvider</a>:
+              </p>
+
+              <h6>Example</h6>
+              <Example>
+                <ThemeProvider
+                  theme={{
+                    grid: {
+                      grid_breakpoints: {
+                        xs: 0,
+                        sm: 576,
+                        md: 768,
+                        lg: 992,
+                        xl: 1200
+                      },
+                      max_container_width: {
+                        sm: 540,
+                        md: 720,
+                        lg: 960,
+                        xl: 1140
+                      },
+                      column_gutter: {
+                        xs: 6,
+                        sm: 6,
+                        md: 6,
+                        lg: 24,
+                        xl: 24
+                      },
+                      outer_gutter: {
+                        xs: 0,
+                        sm: 0,
+                        md: 0,
+                        lg: 0,
+                        xl: 0
+                      }
+                    }
+                  }}
+                >
+                  <Container fluid>
+                    <Row>
+                      <Col span={{ sm: 1/3 }} style={{ border: 'none' }}>
+                        <div style={{ border: '1px solid #eee' }}>6px col gutters on md and below</div>
+                      </Col>
+                      <Col span={{ sm: 1/3 }} style={{ border: 'none' }}>
+                        <div style={{ border: '1px solid #eee' }}>0px outer gutters</div>
+                      </Col>
+                      <Col span={{ sm: 1/3 }} style={{ border: 'none' }}>
+                        <div style={{ border: '1px solid #eee' }}>24px col gutters for lg+</div>
+                      </Col>
+                    </Row>
+                  </Container>
+                </ThemeProvider>
+              </Example>
+
+              <Code>
+                {`<ThemeProvider
+  theme={{
+    grid: {
+      grid_breakpoints: {
+        xs: 0,
+        sm: 576,
+        md: 768,
+        lg: 992,
+        xl: 1200
+      },
+      max_container_width: {
+        sm: 540,
+        md: 720,
+        lg: 960,
+        xl: 1140
+      },
+      column_gutter: {
+        xs: 6,
+        sm: 6,
+        md: 6,
+        lg: 24,
+        xl: 24
+      },
+      outer_gutter: {
+        xs: 0,
+        sm: 0,
+        md: 0,
+        lg: 0,
+        xl: 0
+      }
+    }
+  }}
+>
+  <Container fluid>
+    <Row>
+      <Col span={{ sm: 1/3 }} style={{ border: 'none' }}>
+        <div style={{ border: '1px solid #eee' }}>6px col gutters on mobile</div>
+      </Col>
+      <Col span={{ sm: 1/3 }} style={{ border: 'none' }}>
+        <div style={{ border: '1px solid #eee' }}>0px outer gutters</div>
+      </Col>
+      <Col span={{ sm: 1/3 }} style={{ border: 'none' }}>
+        <div style={{ border: '1px solid #eee' }}>24px col gutters for lg+</div>
+      </Col>
+    </Row>
+  </Container>
+</ThemeProvider>`}
               </Code>
             </CardAnimation>
           </Col>
